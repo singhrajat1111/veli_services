@@ -1,0 +1,81 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "This is a server for the user-facing application for the Velqip",
+  "homepage": "https://github.com/Velqip123/Backend#readme",
+  "bugs": {
+    "url": "https://github.com/Velqip123/Backend/issues"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Velqip123/Backend.git"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "license": "UNLICENSED",
+  "author": "PST",
+  "type": "commonjs",
+  "main": "src/main.ts",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "tsnd --respawn -r tsconfig-paths/register src/main.ts",
+    "dev:no-watch": "tsx src/main.ts",
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write .",
+    "prepare": "husky",
+    "db:introspect": "dotenv -e .env.development -- drizzle-kit introspect",
+    "db:generate": "dotenv -e .env.development -- drizzle-kit generate",
+    "db:migrate": "dotenv -e .env.development -- drizzle-kit migrate"
+      ,
+      "es:setup": "ts-node src/elastic/createIndices.ts",
+      "es:sync": "ts-node src/elastic/syncFromSupabase.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^25.2.1",
+    "@typescript-eslint/eslint-plugin": "^8.54.0",
+    "@typescript-eslint/parser": "^8.54.0",
+    "dotenv-cli": "^11.0.0",
+    "drizzle-kit": "^0.31.8",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-boundaries": "^5.4.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-unused-imports": "^4.3.0",
+    "husky": "^9.1.7",
+    "jiti": "^2.6.1",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.8.1",
+    "supabase": "^2.76.3",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "esbuild": "^0.25.0"
+  },
+  "dependencies": {
+    "apple-signin-auth": "^2.0.0",
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.4",
+    "drizzle-orm": "^0.45.1",
+    "express": "^5.2.1",
+    "google-auth-library": "^10.5.0",
+    "jsonwebtoken": "^9.0.3",
+    "postgres": "^3.4.8",
+    "resend": "^6.9.2",
+    "zod": "^4.3.6"
+  }
+}

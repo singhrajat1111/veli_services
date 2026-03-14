@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    // Language and Library Options, Runtime options
+    "target": "es2022",
+    "lib": [
+      "ES2022"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    // Output Options
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "sourceMap": true,
+    // path Mapping Options
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    // Strict Type-Checking Options & Safety Checks
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "exactOptionalPropertyTypes": true,
+    "useUnknownInCatchVariables": true,
+    // Interoperability Options
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    // Performance Options
+    "skipLibCheck": true,
+    // Tools Options
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "files": [
+    "src/types/express.d.ts"
+  ]
+}

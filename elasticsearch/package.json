@@ -1,0 +1,26 @@
+{
+  "name": "velqip-elasticsearch-server",
+  "version": "1.0.0",
+  "description": "Standalone Elasticsearch service for Velqip nutrition e-commerce app",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "es:setup": "ts-node src/elastic/createIndices.ts",
+    "es:sync": "ts-node src/elastic/syncFromSupabase.ts"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.13.0",
+    "@supabase/supabase-js": "^2.0.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.22.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.5.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0"
+  }
+}
